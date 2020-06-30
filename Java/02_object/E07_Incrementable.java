@@ -1,4 +1,4 @@
-//: 2_object/E07_Incrementable.java
+//: 02_object/E07_Incrementable.java
 
 class StaticTest {
     static int i = 22;

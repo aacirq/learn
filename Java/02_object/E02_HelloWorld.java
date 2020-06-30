@@ -1,4 +1,4 @@
-//: 2_object/E02_HelloWorld.java
+//: 02_object/E02_HelloWorld.java
 
 public class E02_HelloWorld {
     public static void main(String[] args) {

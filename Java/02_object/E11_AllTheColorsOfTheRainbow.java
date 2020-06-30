@@ -1,4 +1,4 @@
-//: 2_object/E11_AllTheColorsOfTheRainbow.java
+//: 02_object/E11_AllTheColorsOfTheRainbow.java
 
 public class E11_AllTheColorsOfTheRainbow {
     int anIntegerRepresentingColors;

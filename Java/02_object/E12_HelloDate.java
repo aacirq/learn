@@ -1,4 +1,4 @@
-//: 2_object/E12_HelloDate.java
+//: 02_object/E12_HelloDate.java
 import java.util.*;
 
 /** The first Thinking in Java example program.

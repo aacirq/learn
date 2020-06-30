@@ -1,4 +1,4 @@
-//: 2_object/E15_HelloWorldDoc.java
+//: 02_object/E15_HelloWorldDoc.java
 /****************** Exercise 15 ***************** 
  * Add comment documentation to the program in Exercise 2.   
  * Extract it into an HTML file using Javadoc 

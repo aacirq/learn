@@ -1,4 +1,4 @@
-//: 3_operator/URShift.java
+//: 03_operator/URShift.java
 
 public class URShift {
     public static void main(String[] args) {

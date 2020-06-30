@@ -1,4 +1,4 @@
-//: 2_object/E14_DocTest.java
+//: 02_object/E14_DocTest.java
 
 /** 
  * A class comment 

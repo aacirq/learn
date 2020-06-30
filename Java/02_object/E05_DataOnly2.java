@@ -1,4 +1,4 @@
-//: 2_object/E05_DataOnly2.java
+//: 02_object/E05_DataOnly2.java
 
 class DataOnly {
     int i;

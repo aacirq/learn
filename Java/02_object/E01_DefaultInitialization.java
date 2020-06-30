@@ -1,4 +1,4 @@
-//: 2_object/E01_DefaultInitialization.java
+//: 02_object/E01_DefaultInitialization.java
 
 public class E01_DefaultInitialization {
     int i;

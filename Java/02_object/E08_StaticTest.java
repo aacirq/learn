@@ -1,4 +1,4 @@
-//: 2_object/E08_StaticTest.java
+//: 02_object/E08_StaticTest.java
 
 public class E08_StaticTest {
     static int i = 22;

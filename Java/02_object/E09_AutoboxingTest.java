@@ -1,4 +1,4 @@
-//: 2_object/E09_AutoboxingTest.java
+//: 02_object/E09_AutoboxingTest.java
 
 public class E09_AutoboxingTest {
     public static void main(String[] args) {

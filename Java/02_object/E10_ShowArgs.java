@@ -1,4 +1,4 @@
-//: 2_object/E10_ShowArgs.java
+//: 02_object/E10_ShowArgs.java
 
 public class E10_ShowArgs {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-//: 2_object/E06_Storage.java
+//: 02_object/E06_Storage.java
 
 public class E06_Storage {
     int storage(String s) {

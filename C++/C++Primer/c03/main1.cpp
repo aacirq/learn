@@ -7,9 +7,8 @@ using std::cout;
 using std::endl;
 
 int main() {
-    string str;
-    while(getline(cin, str)) {
-        cout << str << endl;
-    }
+    int a[] = {1, 2, 3, 4 ,5};
+    int (&b)[5] = a;
+
     return 0;
 }

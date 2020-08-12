@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string>
 
-using std::cin;
 using std::string;
+using std::cin;
 using std::cout;
 using std::endl;
 
 int main() {
-    int a[] = {1, 2, 3, 4 ,5};
-    int (&b)[5] = a;
-
+    string str;
+    while(getline(cin, str)) {
+        cout << str << endl;
+    }
     return 0;
 }

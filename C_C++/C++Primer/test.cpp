@@ -1,26 +1,64 @@
 #include <iostream>
 #include <vector>
+#include <deque>
+#include <queue>
+#include <list>
+#include <stack>
+#include <algorithm>
+#include <iterator>
+#include <cstring>
+#include <unordered_set>
+#include <unordered_map>
 
-using std::vector;
+using namespace std;
+
+struct TreeNode {
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 
 class Solution {
 public:
-    bool Find(int target, vector<vector<int> > array) {
-        auto len_row = array.size();
-        if(len_row == 0) return false;
-        auto len_col = array[0].size();
-        if(len_col == 0) return false;
-        if(target < array[0][0]) return false;
-        if(target > array[len_row - 1][len_col - 1]) return false;
-        int cur_col = len_col - 1, cur_row = 0;
-        while(cur_col >= 0 && cur_row < len_row) {
-            if(target == array[cur_row][cur_col]) return true;
-            if(target > array[cur_row][cur_col]) --cur_col;
-            else if(target < array[cur_row][cur_col]) ++cur_row;
+    int minNumberInRotateArray(const vector<int>& vec){
+        if(vec.empty())     return 0;
+        if(vec.size() == 1) return vec[0];
+        int left = 0, right = vec.size() - 1;
+        while(right - left > 0) {
+        if(vec[left] < vec[right]) return vec[left];
+        int mid = (left + right) / 2;
+        if(vec[mid] > vec[left])      left = mid + 1;
+        else if(vec[mid] < vec[left]) right = mid;
+        else
+            if(vec[mid] > vec[right]) left = mid + 1;
+            else                      ++left;
         }
-        return false;
+        return vec[left];
     }
 };
 
 int main() {
+  Solution s;
+
+  vector<int> vec1 = {1, 2, 3, 4, 5};
+  vector<int> vec2 = {5, 1, 2, 3, 4};
+  vector<int> vec3 = {4, 5, 1, 2, 3};
+  vector<int> vec4 = {3, 4, 5, 1, 2};
+  vector<int> vec5 = {2, 3, 4, 5, 1};
+
+  vector<int> vec6 = {5, 1, 2, 5, 5, 5, 5, 5, 5};
+  vector<int> vec7 = {5, 5, 5, 5, 5, 5, 1, 2};
+  vector<int> vec8 = {5, 5, 5, 5, 5, 5, 5, 1, 2, 5, 5, 5};
+
+  cout << "1: " << s.minNumberInRotateArray(vec1) << endl;
+  cout << "2: " << s.minNumberInRotateArray(vec2) << endl;
+  cout << "3: " << s.minNumberInRotateArray(vec3) << endl;
+  cout << "4: " << s.minNumberInRotateArray(vec4) << endl;
+  cout << "5: " << s.minNumberInRotateArray(vec5) << endl;
+  cout << "6: " << s.minNumberInRotateArray(vec6) << endl;
+  cout << "7: " << s.minNumberInRotateArray(vec7) << endl;
+  cout << "8: " << s.minNumberInRotateArray(vec8) << endl;
+
+  return 0;
 }

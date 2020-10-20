@@ -36,36 +36,45 @@ static const auto io_sync_off = []() {
 
 class Solution {
 public:
-    int GetUglyNumber_Solution(int index) {
-        vector<int> vec(index);
-        vec[0] = 1;
-        size_t ind2 = 0, ind3 = 0, ind5 = 0;
-        for(size_t ind_vec = 1; ind_vec < index; ++ind_vec) {
-            do {
-                int num2 = vec[ind2] * 2;
-                int num3 = vec[ind3] * 3;
-                int num5 = vec[ind5] * 5;
-                int this_num;
-                if(num2 < num3) {
-                    if(num2 < num5) { this_num = num2; ++ind2; }
-                    else            { this_num = num5; ++ind5; }
-                }
-                else {
-                    if(num3 < num5) { this_num = num3; ++ind3; }
-                    else            { this_num = num5; ++ind5; }
-                }
-                vec[ind_vec] = this_num;
-            } while(vec[ind_vec] == vec[ind_vec - 1]);
+    int MoreThanHalfNum_Solution(vector<int>& numbers) {
+        unordered_map<int, int> m;
+        int thres = numbers.size() / 2;
+        for(auto i : numbers) {
+            ++m[i];
+            if(m[i] > thres) return i;
         }
-        return vec[index - 1];
+        return 0;
     }
 };
 
 int main() {
     Solution s;
-    for(int i = 1; i < 100; ++i) {
-        cout << s.GetUglyNumber_Solution(i) << endl;
-    }
+
+    // ListNode* node11 = new ListNode(1);
+    // ListNode* node12 = new ListNode(3);
+    // ListNode* node13 = new ListNode(5);
+    // ListNode* node14 = new ListNode(7);
+    // ListNode* node15 = new ListNode(9);
+    // ListNode* node16 = new ListNode(10);
+    
+    // ListNode* node21 = new ListNode(2);
+    // ListNode* node22 = new ListNode(3);
+    // ListNode* node23 = new ListNode(4);
+    // ListNode* node24 = new ListNode(6);
+    
+    // node11->next = node12;
+    // node12->next = node13;
+    // node13->next = node14;
+    // node14->next = node15;
+    // node15->next = node16;
+
+    // node21->next = node22;
+    // node22->next = node23;
+    // node23->next = node24;
+
+    vector<int> ivec = {1,2,3,2,4,2,5,2,3};
+    // vector<int> ivec2 = {-2, -8, -1, -5, -9};
+    cout << s.MoreThanHalfNum_Solution(ivec) << endl;
 
     return 0;
 }

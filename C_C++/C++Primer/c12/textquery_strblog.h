@@ -1,6 +1,7 @@
 #ifndef __TEXT_QUERY_STRBLOG_H
 #define __TEXT_QUERY_STRBLOG_H
 
+#include <iostream>
 #include <sstream>
 #include <vector>
 #include <string>
@@ -27,7 +28,7 @@ private:
 };
 
 // -----------------------------------------------------------------------------
-// EDefinition of class QueryResult
+// Definition of class QueryResult
 
 class QueryResult {
 public:

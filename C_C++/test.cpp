@@ -9,6 +9,8 @@
 #include <cstring>
 #include <unordered_set>
 #include <unordered_map>
+#include <set>
+#include <map>
 
 using namespace std;
 
@@ -36,14 +38,34 @@ static const auto io_sync_off = []() {
 
 class Solution {
 public:
-    int MoreThanHalfNum_Solution(vector<int>& numbers) {
-        unordered_map<int, int> m;
-        int thres = numbers.size() / 2;
-        for(auto i : numbers) {
-            ++m[i];
-            if(m[i] > thres) return i;
+    vector<string> Permutation(string str) {
+        set<string> s;
+        if(str.empty()) return vector<string>();
+        perm(s, str, 0, str.size() - 1);
+        return vector<string>(s.begin(), s.end());
+    }
+
+private:
+    void swap(string& str, size_t i, size_t j) {
+        char c = str[i];
+        str[i] = str[j];
+        str[j] = c;
+    }
+
+    void perm(set<string>& vec, string& str, size_t k, size_t m) {
+        if(k == m) {
+            // vec.push_back(str);
+            vec.insert(str);
         }
-        return 0;
+        else {
+            for(size_t i = k; i <= m; ++i) {
+                cout << "k: " << k << ", i: " << i << ": " << str << endl;
+                swap(str, k, i);
+                cout << ": " << str << endl;
+                perm(vec, str, k + 1, m);
+                swap(str, k, i);
+            }
+        }
     }
 };
 
@@ -72,9 +94,31 @@ int main() {
     // node22->next = node23;
     // node23->next = node24;
 
-    vector<int> ivec = {1,2,3,2,4,2,5,2,3};
+    // vector<int> ivec = {1,2,3,2,4,2,5,2,3};
     // vector<int> ivec2 = {-2, -8, -1, -5, -9};
-    cout << s.MoreThanHalfNum_Solution(ivec) << endl;
+
+    string str;
+    str.push_back(0x48);
+    str.push_back(0x61);
+    str.push_back(0x70);
+    str.push_back(0x70);
+    str.push_back(0x79);
+    str.push_back(0x50);
+    str.push_back(0x72);
+    str.push_back(0x6f);
+    str.push_back(0x67);
+    str.push_back(0x72);
+    str.push_back(0x61);
+    str.push_back(0x6d);
+    str.push_back(0x6d);
+    str.push_back(0x65);
+    str.push_back(0x72);
+    str.push_back(0x27);
+    str.push_back(0x73);
+    str.push_back(0x44);
+    str.push_back(0x61);
+    str.push_back(0x79);
+    cout << str << endl;
 
     return 0;
 }

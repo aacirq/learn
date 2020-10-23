@@ -21,6 +21,7 @@ public:
     size_type size() const { return data->size(); }
     bool empty() const { return data->empty(); }
     void push_back(const std::string& str) { data->push_back(str); }
+    void push_back(std::string&& str) { data->push_back(std::move(str)); }
     void pop_back();
     std::string& front();
     std::string& back();

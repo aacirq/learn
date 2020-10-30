@@ -1,6 +1,8 @@
 #ifndef __TEXT_QUERY_H
 #define __TEXT_QUERY_H
 
+#include <iostream>
+#include <fstream>
 #include <sstream>
 #include <vector>
 #include <string>
@@ -25,7 +27,7 @@ private:
 };
 
 // -----------------------------------------------------------------------------
-// EDefinition of class QueryResult
+// Definition of class QueryResult
 
 class QueryResult {
 public:
@@ -36,8 +38,8 @@ public:
     friend std::ostream& print(std::ostream& ostrm, const QueryResult& qr);
     std::set<TextQuery::line_no>::iterator begin() const { return ptr->begin(); }
     std::set<TextQuery::line_no>::iterator end() const { return ptr->end(); }
-    std::shared_ptr<std::shared_ptr<std::vector<std::string>>> get_file() const { 
-        return std::make_shared<std::shared_ptr<std::vector<std::string>>>(file);
+    std::shared_ptr<std::vector<std::string>> get_file() const { 
+        return std::make_shared<std::vector<std::string>>(file);
     }
 
 private:
